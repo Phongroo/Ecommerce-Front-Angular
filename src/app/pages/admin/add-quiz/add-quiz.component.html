@@ -1,0 +1,46 @@
+<mat-card>
+    <h1>Add New Quiz</h1>
+    <div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <form (ngSubmit)="addQuiz()">
+                <mat-form-field class="w100">
+                    <mat-label>Enter title</mat-label>
+                    <input type="text" [(ngModel)]="quizData.title" name="title" placeholder="Enter title" matInput />
+                </mat-form-field>
+                <mat-form-field class="w100" appearance="fill">
+                    <mat-label>Enter Description</mat-label>
+                    <textarea type="text" [(ngModel)]="quizData.description" name="description" placeholder="Enter here" matInput rows="5"></textarea>
+                </mat-form-field>
+                <div class="row">
+                    <div class="col-md-6">
+                        <mat-form-field class="w100">
+                            <mat-label>Maximum Mark</mat-label>
+                            <input type="text" [(ngModel)]="quizData.maxMarks" name="maxMarks" placeholder="Enter here" matInput />
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-form-field class="w100">
+                            <mat-label>Number Of Question</mat-label>
+                            <input type="text" [(ngModel)]="quizData.numberOfQuestions" name="numberOfQuestions" placeholder="Enter here" matInput />
+                        </mat-form-field>
+                    </div>
+                </div>    
+                <mat-slide-toggle [(ngModel)]="quizData.active" name="active" class="mt20 mb20" checked="false">Publish status</mat-slide-toggle> 
+                <br/>   
+                <mat-form-field appearance="fill" class="mt20 w100">
+                    <mat-label>Categories</mat-label>
+                    <mat-select name="category" [(ngModel)]="quizData.category.cId">
+                        <mat-option *ngFor="let c of categories"[value]="c.cId">{{c.title}}</mat-option>
+                    </mat-select>
+                </mat-form-field>      
+                <div class="container text-center">
+                    <button type="submit" mat-raised-button color="accent">Add Quiz</button>
+                </div> 
+                
+            </form>
+        </div>
+    </div>
+</div>
+</mat-card>
+
