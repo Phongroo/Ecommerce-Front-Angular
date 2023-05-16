@@ -7,6 +7,6 @@
         <button mat-list-item routerLink="/admin/add-category"><mat-icon mat-list-icon class="mr10">add_circle_outline</mat-icon>Add categories</button>
         <button mat-list-item routerLink="/admin/quizzes"><mat-icon mat-list-icon class="mr10">quiz</mat-icon>Quizzes</button>
         <button mat-list-item routerLink="/admin/add-quiz"><mat-icon mat-list-icon class="mr10">add</mat-icon>Add Quiz</button>
-        <button mat-list-item routerLink="/admin/profile"><mat-icon mat-list-icon class="mr10">logout</mat-icon>Logout</button>
+        <button (click)="logout()" mat-list-item ><mat-icon mat-list-icon class="mr10">logout</mat-icon>Logout</button>
     </mat-action-list>
 </mat-card>
